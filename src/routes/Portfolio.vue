@@ -15,10 +15,16 @@
             </div>
         </div>
     </div>
+    <Loder />
 </template>
 
 <script>
+import Loader from '../components/Loader.vue'
+
 export default {
+    components: {
+        Loader
+    },
     data() {
         return {
 
