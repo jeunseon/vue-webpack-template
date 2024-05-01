@@ -1,25 +1,44 @@
 <template>
     <div class="container">
-        <div class="skeletons">
-            <div class="skeleton poster"></div>
-            <div class="specs">
-                <div class="skeleton title"></div>
-                <div class="skeleton btns"></div>
-                <div class="skeleton etc">
-                    <span>웹 제작 : </span>
-                </div>
-                <div class="skeleton etc">
-                    <span>제작 페이지 : </span>
-                </div>
-                <div class="skeleton icons">
-                    <span>사용 프로그램</span>
+        <template v-if="loading">
+            <div class="skeletons">
+                <div class="skeleton poster"></div>
+                <div class="specs">
+                    <div class="skeleton title"></div>
+                    <div class="skeleton btns"></div>
+                    <div class="skeleton etc"></div>
+                    <div class="skeleton etc"></div>
+                    <div class="skeleton skill"></div>
                 </div>
             </div>
-        </div>
-        <Loader
-            :size="3"
-            :z-index="9"
-            fixed />
+            <Loader
+                :size="3"
+                :z-index="9"
+                fixed />
+        </template>
+        <div
+            v-else 
+            class="port-details">
+            <div class="poster"></div>
+            <div class="specs">
+                <div class="title"></div>
+                <div class="btns"></div>
+                <div class="etc">
+                    <span>웹 제작 : </span>
+
+                </div>
+                <div class="etc">
+                    <span>제작 페이지 : </span>
+
+                </div>
+                <div class="skill">
+                    <span>사용 프로그램</span>
+                    <div class="icon">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>    
     </div>
 </template>
 
@@ -33,6 +52,11 @@ export default {
     data() {
         return {
 
+        }
+    },
+    computed: {
+        loading() {
+            return this.$store.
         }
     }
 }
@@ -71,19 +95,11 @@ export default {
             width: 70%;
             height: 50px;
             margin-top: 20px;
-            span {
-                font-size: 18px;
-                font-weight: 700;
-            }
         }
-        &.icons {
+        &.skill {
             width: 100%;
             height: 100px;
             margin-top: 20px;
-            span {
-                font-size: 18px;
-                font-weight: 700;
-            }
         }
     }    
 }
