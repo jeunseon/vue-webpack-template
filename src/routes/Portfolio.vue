@@ -11,11 +11,16 @@
                 <div class="skeleton etc">
                     <span>제작 페이지 : </span>
                 </div>
-                <div class="skeleton icons"></div>
+                <div class="skeleton icons">
+                    <span>사용 프로그램</span>
+                </div>
             </div>
         </div>
+        <Loader
+            :size="3"
+            :z-index="9"
+            fixed />
     </div>
-    <Loder />
 </template>
 
 <script>
@@ -36,5 +41,50 @@ export default {
 <style lang="scss" scoped>
 @import "~/scss/main.scss";
 
-
+.container {
+    padding-top: 40px;
+}
+.skeletons {
+    display: flex;
+    .poster {
+        flex-shrink: 0;
+        width: 500px;
+        height: 500px * 2 / 3;
+        margin-right: 70px;
+    }
+    .specs {
+        flex-grow: 1;
+    }
+    .skeleton {
+        border-radius: 10px;
+        background-color: $gray-200;
+        &.title {
+            width: 80%;
+            height: 70px;
+        }
+        &.btns {
+            width: 50%;
+            height: 50px;
+            margin-top: 20px;
+        }
+        &.etc {
+            width: 70%;
+            height: 50px;
+            margin-top: 20px;
+            span {
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+        &.icons {
+            width: 100%;
+            height: 100px;
+            margin-top: 20px;
+            span {
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+    }    
+}
 </style>
