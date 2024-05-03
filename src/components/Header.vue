@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="container">
         <Logo />
         <div class="nav nav-pills">
             <div 
@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 header {
     height: 70px;
-    padding: 0 40px;
+    padding: 0 40px 0 0;
     display: flex;
     align-items: center;
     .logo {

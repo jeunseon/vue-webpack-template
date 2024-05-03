@@ -1,12 +1,12 @@
 <template>
-    <footer>
+    <footer class="container">
         <Logo />
         <div class="footerRight">
             <p>본 사이트는 상업적 용도가 아닌 개인 포트폴리오 용으로 제작되었습니다.</p>
             <a 
                 href="https://github.com/jeunseon" 
                 target="_blank">
-                (c){{ new Date().getFullYear() }} by JEONG EUN SEON  All Right Reserved.
+                (c){{ new Date().getFullYear() }} by JEONG EUN SEON. All Right Reserved.
             </a>
         </div>
     </footer>
@@ -26,7 +26,7 @@ export default {
 @import "~/scss/main.scss";
 
 footer {
-    padding: 70px 40px 0;
+    padding: 70px 40px 40px 0;
     display: flex;
     .logo {
         margin-right: 40px;
@@ -35,7 +35,7 @@ footer {
         p {
             color: $gray-600;
             font-size: 14px;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         a {
             text-decoration: none;
