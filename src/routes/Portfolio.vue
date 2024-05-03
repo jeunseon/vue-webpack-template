@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <template v-if="loading">
+        <template>
             <div class="skeletons">
                 <div class="skeleton poster"></div>
                 <div class="specs">
@@ -17,7 +17,7 @@
                 fixed />
         </template>
         <div
-            v-else 
+            
             class="port-details">
             <div class="poster"></div>
             <div class="specs">
@@ -55,9 +55,7 @@ export default {
         }
     },
     computed: {
-        loading() {
-            return this.$store.
-        }
+
     }
 }
 </script>
