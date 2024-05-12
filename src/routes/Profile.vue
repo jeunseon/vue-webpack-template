@@ -2,7 +2,7 @@
     <div class="container">
         <div class="about">
             <div class="photo">
-                <img :src="image" alt="name">
+                <img src="~/assets/mine.jpg" alt="내 사진">
             </div>
             <div class="profile">
                 <div class="name">
@@ -41,8 +41,8 @@
                     v-for="iconImg in icons" 
                     :key="iconImg.name" 
                     :src="iconImg.src" 
-                    :alt="iconImg.name">
-                <span>{{ icons.name }}</span>    
+                    :alt="iconImg.name" />
+                
             </div>
         </div>
     </div>
@@ -76,7 +76,7 @@ export default {
                 {name: 'Illustrator', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/768px-Adobe_Illustrator_CC_icon.svg.png'},
                 {name: 'Scss', src: 'https://eunseon-portfolio.netlify.app/img/sass.svg'},
                 {name: 'Github', src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/900px-Octicons-mark-github.svg.png?20180806170715'},
-                {name: 'Vue', src: '~/assets/vue-svg.svg'},
+                {name: 'Vue', src: 'https://github.com/jeunseon/vue-webpack-template/assets/111102131/abed85f1-1d45-4233-bc34-d791ba82c20e'},
             ]
         }   
     },
@@ -92,12 +92,13 @@ export default {
         margin-top: 70px;
         .photo {
             width: 500px;
-            height: 500px * 2 / 3;
+            height: 500px * 6 / 5;
             background-color: gray;
             border-radius: 10px;
             margin-right: 70px;
+            overflow: hidden;
             img{
-                
+                width: 100%;
             }
         }
         .profile {
@@ -114,7 +115,7 @@ export default {
                 }
                 p {
                     font-size: 16px;
-                    
+                    line-height: 2;
                 }
             }
         }
