@@ -46,7 +46,7 @@ export default {
         return {
             ports: [
                 {
-                    poster: '~/assets/spo.jpg',
+                    poster: require('~/assets/spo.jpg').default,
                     title:'대검찰청',
                     git: 'https://github.com/jeunseon/spo',
                     view: 'http://euns420.dothome.co.kr/spo/',
@@ -55,7 +55,7 @@ export default {
                     tool: 'HTML / CSS / JS / API'
                 },
                 {
-                    poster: '~/assets/save.jpg',
+                    poster: require('~/assets/save.jpg').default,
                     title:'세이브 더 칠드런',
                     git: 'https://github.com/jeunseon/savethechildren',
                     view: 'https://jeunseon.github.io/savethechildren/',
@@ -64,7 +64,7 @@ export default {
                     tool: 'HTML / CSS / JS'
                 },
                 {
-                    poster: '~/assets/montraum.jpg',
+                    poster: require('~/assets/montraum.jpg').default,
                     title:'몬트라움',
                     git: 'https://github.com/jeunseon/montraum',
                     view: 'https://jeunseon.github.io/montraum/',
@@ -82,7 +82,7 @@ export default {
                     tool: 'HTML / SCSS / Bootstrap / VUE'
                 },
                 {
-                    poster: '~/assets/portfolio.jpg',
+                    poster: require('~/assets/portfolio.jpg').default,
                     title:'포트폴리오',
                     git: '',
                     view: 'https://eunseon-portfolio.netlify.app/',
@@ -91,7 +91,7 @@ export default {
                     tool: 'HTML / CSS / Bootstrap / Javascript / Isotope'
                 },
                 {
-                    poster: '~/assets/cafe.jpg',
+                    poster: require('~/assets/cafe.jpg').default,
                     title:'카페베네',
                     git: 'https://github.com/jeunseon/caffebene',
                     view: 'https://caffebene-port.netlify.app/',
@@ -126,8 +126,9 @@ export default {
         height: 500px * 2 / 3;
         margin-right: 70px;
         background-color: $gray-200;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
+        background-repeat: no-repeat;
     }
     .specs {
         flex-grow: 1;

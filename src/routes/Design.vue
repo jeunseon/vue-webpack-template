@@ -1,20 +1,20 @@
 <template>
     <div class="container">
-        <h2><span>S</span>NS <span>D</span>ESIGN</h2>
-        <div class="sns">
-            <img 
-                v-for="sns in snsdesigns"
-                :key="sns.name"
-                :src="sns.imgSrc" 
-                :alt="sns.name">
-        </div>
         <h2><span>B</span>ANNER <span>D</span>ESIGN</h2>
         <div class="banner">
             <img
                 v-for="banner in bannerdesigns"
                 :key="banner.name" 
-                :src="banner.imgSrc" 
+                :src="require(`~/assets/${banner.imgSrc}.jpg`).default" 
                 :alt="banner.name">
+        </div>
+        <h2><span>S</span>NS <span>D</span>ESIGN</h2>
+        <div class="sns">
+            <img 
+                v-for="sns in snsdesigns"
+                :key="sns.name"
+                :src="require(`~/assets/${sns.imgSrc}.jpg`).default" 
+                :alt="sns.name">
         </div>
     </div>
 </template>
@@ -24,14 +24,14 @@ export default {
     data() {
         return {
             snsdesigns: [
-                {name: 'KOMONT intro', imgSrc: '~/assets/11_intro.jpg'},
-                {name: 'KOMONT F/W', imgSrc: '~/assets/fw_intro.jpg'},
-                {name: 'Lotte On', imgSrc: '~/assets/lotteon.jpg'},
-                {name: 'KOMONT t-shirt', imgSrc: '~/assets/st_intro.jpg'},
+                {name: 'KOMONT intro', imgSrc: "11_intro"},
+                {name: 'KOMONT F/W', imgSrc: 'fw_intro'},
+                {name: 'Lotte On', imgSrc: 'lotteon'},
+                {name: 'KOMONT t-shirt', imgSrc: 'st_intro'},
             ],
             bannerdesigns: [
-                {name: '1+1 EVENT', imgSrc: '~/assets/event.jpg'},
-                {name: 'summer lucky day', imgSrc: '~/assets/shoping.jpg'},
+                {name: '1+1 EVENT', imgSrc: 'event'},
+                {name: 'summer lucky day', imgSrc: 'shoping'},
             ]
         }
     },
@@ -53,11 +53,15 @@ export default {
     }
     div {
         display: flex;
-        &.sns {
-
-        }
         &.banner {
-            
+            img {
+                width: 500px;
+            }
+        }
+        &.sns {
+            img {
+                width: 300px;
+            }
         }
     }
 }
