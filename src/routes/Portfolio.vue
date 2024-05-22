@@ -83,8 +83,8 @@ export default {
                 },
                 {
                     poster: require('~/assets/portfolio.jpg').default,
-                    title:'포트폴리오',
-                    git: '',
+                    title:'HTML 포트폴리오',
+                    git: 'https://github.com/jeunseon/porfoliosite',
                     view: 'https://eunseon-portfolio.netlify.app/',
                     monitor: 'Laptop / Tablet / Mobile',
                     page: '메인페이지', 
@@ -106,6 +106,10 @@ export default {
     methods: {
         gotoPage(url) {
             window.open(url, "_blank");
+        },
+        async init() {
+            await this.$loadImage(this.poster)
+            this.imageLoading = false
         }
     }
 }
@@ -150,14 +154,12 @@ export default {
                 border: none;
                 transition: .5s;
                 font-size: 20px;
-                font-weight: 700;
                 letter-spacing: 5px;
                 &:nth-of-type(2) {
                     background-color: $primary;
                 }
                 &:hover {
-                    opacity: .8;
-                    color: $black;
+                    background-color: blueviolet;
                 }
             }
         }

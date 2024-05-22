@@ -61,5 +61,8 @@ header {
     .logo {
         margin-right: 40px;
     }
+    .nav-pills .nav-link.active {
+        border-radius: 10px;
+    }
 }
 </style>

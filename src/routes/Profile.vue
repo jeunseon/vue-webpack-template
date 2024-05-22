@@ -7,12 +7,10 @@
             <div class="profile">
                 <div class="name">
                     {{ name }}
+                    <span>{{ ename }}</span>
                 </div>
                 <div class="birth">
                     {{ birth }}
-                </div>
-                <div class="email">
-                    {{ email }}
                 </div>
                 <div class="lisence">
                     <h3>Lisence</h3>
@@ -28,14 +26,6 @@
             <h2>
                 <span>S</span>KILL
             </h2>
-            <div class="progrss">
-                <div v-for="bar in bars" :key="bar.name">
-                    <div class="col-sm-2">{{ bar.name }}:</div>
-                    <div class="col-sm-10 pt-1">
-                        <b-progress :value="bar.value" :variant="bar.variant" :key="bar.variant"></b-progress>
-                    </div>
-                </div>
-            </div>
             <div class="skill-icon">
                 <img
                     v-for="iconImg in icons" 
@@ -44,7 +34,7 @@
                     :alt="iconImg.name" />
                 
             </div>
-        </div>
+        </div>       
     </div>
 </template>
 
@@ -52,9 +42,9 @@
 export default {
     data() {
         return {
-            name: '정은선 (Jeong EunSeon)',
+            name: '정은선',
+            ename: '(Jeong EunSeon)',
             birth: '1994.04.20',
-            email: 'euns420@naver.com',
             lisence: `
                 &bull; GTQ 1급 <br /> 
                 &bull; 웹디자인기능사 과정평가형`,
@@ -63,13 +53,11 @@ export default {
                 &bull; 스마트 UI/UX 디자인콘텐츠개발 양성 (2018.04~2019.01) <br />
                 &bull; 코몽트 쇼핑몰 웹디자이너 (2019.02~2020.08) <br />
                 &bull; 더휴먼컴퓨터아트아카데미 (2022.05~2022.09)`,
-            bars: [
-                {name: 'HTML', value: 95},
-                {name: 'CSS', value: 93},
-                {name: 'JQUERY', value: 80},
-                {name: 'JAVASCRIPT', value: 70},
-            ],
             icons: [
+                {name: 'HTML', src: 'https://github.com/jeunseon/vue-webpack-template/assets/111102131/313aff63-7ecc-4811-bb91-454c8d9a4658'},
+                {name: 'CSS', src: 'https://github.com/jeunseon/vue-webpack-template/assets/111102131/a5083644-a365-48dd-a395-81daa0f68ae9'},
+                {name: 'JQuery', src: 'https://github.com/jeunseon/vue-webpack-template/assets/111102131/3422b331-30f7-4e2e-9489-bd810cb3c675'},
+                {name: 'Javascript', src: 'https://github.com/jeunseon/vue-webpack-template/assets/111102131/d9a94d46-d882-43b8-a536-58f267428106'},
                 {name: 'Figma', src: 'https://eunseon-portfolio.netlify.app/img/figma.svg'},
                 {name: 'Bootstrap', src: 'https://eunseon-portfolio.netlify.app/img/bootstrap.svg'},
                 {name: 'Photoshop', src: 'https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg'},
@@ -105,6 +93,11 @@ export default {
             .name {
                 font-size: 25px;
                 font-weight: 700;
+                span {
+                    font-weight: normal;
+                    font-size: 16px;
+                    display: block;
+                }
             }
             div {
                 h3 {
