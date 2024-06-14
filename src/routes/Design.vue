@@ -36,10 +36,18 @@ export default {
                 {name: 'KOMONT F/W', imgSrc: 'https://eunseon-portfolio.netlify.app/img/ns_fw_intro.jpg'},
                 {name: 'Lotte On', imgSrc: 'https://eunseon-portfolio.netlify.app/img/lotteon.jpg'},
                 {name: 'KOMONT t-shirt', imgSrc: 'https://eunseon-portfolio.netlify.app/img/st_intro.jpg'},
+                {name: '8월 위메프X코몽트 세일', imgSrc: 'https://github.com/jeunseon/react/assets/111102131/3d3cc40a-8c45-470f-8a55-d13272daab2a'},
+                {name: 'KOMONT 블랙프라이데이', imgSrc: 'https://github.com/jeunseon/react/assets/111102131/1767ece0-b1b4-43e0-9e4e-b8ab6bc097e6'},
+                {name: 'KOMONT 추석 인트로', imgSrc: 'https://github.com/jeunseon/react/assets/111102131/7e130f61-0b35-4db6-bc20-f85f7b94112b'},
+                {name: '카카오톡 플친 추가 상세페이지', imgSrc: 'https://github.com/jeunseon/react/assets/111102131/2f677cc2-d9e6-436d-8780-43d21803045c'},
+                {name: '롯데아이몰 X KOMONT 주말 쇼핑 세일', imgSrc: 'https://github.com/jeunseon/react/assets/111102131/1c1af8cb-6d8b-46db-a23d-a78e6b0644da'},
+                {name: '위메프 X KOMONT 이벤트', imgSrc: 'https://github.com/jeunseon/react/assets/111102131/92596b6e-c127-4a27-ac4c-74701f0cab79'},
             ],
             bannerdesigns: [
                 {name: '1+1 EVENT', imgSrc: 'https://eunseon-portfolio.netlify.app/img/event.jpg'},
                 {name: 'summer lucky day', imgSrc: 'https://eunseon-portfolio.netlify.app/img/shoping.jpg'},
+                {name: 'KOMONT best banner', imgSrc: 'https://github.com/jeunseon/react/assets/111102131/1241499c-63f0-4818-adfd-f636e6e13ca1'},
+                {name: '카카오톡 플친 추가', imgSrc: 'https://github.com/jeunseon/react/assets/111102131/aaac5ebd-b40c-42ac-b3ce-34e34cb93a19'},
             ],
         }
     },
