@@ -26,7 +26,7 @@ export default {
 @import "~/scss/main.scss";
 
 footer {
-    padding: 70px 40px 40px 0;
+    padding: 50px 40px 40px 0;
     display: flex;
     .logo {
         margin-right: 40px;

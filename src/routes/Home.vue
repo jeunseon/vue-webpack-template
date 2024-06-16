@@ -1,70 +1,109 @@
 <template>
     <div class="container">
-        <div class="photo">
-            <img src="~/assets/imgLogo.png" :alt="name">
-        </div>
-        <div class="name">{{ name }}</div>
-        <div>{{ email }}</div>
-        <div>{{ phone }}</div>
-        <img 
-            @click="gotoPage(github)"
-            class="gotoGit"
-            :src="gitIcon"
-            :alt="github" />
+        <swiper class="intro"
+            :modules="modules"
+            :slides-per-view="1"
+            :space-between="50"
+            @swiper="onSwiper"
+            @slideChange="onSlideChange"
+            :loop="true"
+            :autoplay="{delay: 3000, disableOnInteraction : false,}"
+            :effect="fade"
+        >
+            <swiper-slide><p>WELCOME TO MY <br /><span>PORTFOLIO</span> : )</p></swiper-slide>
+            <swiper-slide><p>I AM JEONG<br /><span>EUNSEON</span></p></swiper-slide>
+        </swiper>
     </div>
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            imageLoading: true,
-            name: '정은선',
-            email: 'euns420@naver.com',
-            github: 'https://github.com/',
-            gitIcon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/900px-Octicons-mark-github.svg.png?20180806170715',
-            phone: '010-8221-5539'
-        }
-    },
-    mounted() {
+import { Autoplay, EffectFade } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/scss';
+import 'swiper/scss/autoplay';
+import 'swiper/css/effect-fade';
 
+export default {
+    components: {
+      Swiper,
+      SwiperSlide,
     },
-    methods: {
-        gotoPage(github) {
-            window.open(github, "_blank");
-        },
-        async init() {
-            await this.$loadImage(this.gitIcon)
-            this.imageLoading = false
-        }
-    }
-}
+    setup() {
+      const onSwiper = (swiper) => {
+        console.log(swiper);
+      };
+      const onSlideChange = () => {
+        console.log('slide change');
+      };
+      return {
+        onSwiper,
+        onSlideChange,
+        modules: [Autoplay, EffectFade],
+      };
+    },
+};
 </script>
 
 <style lang="scss" scoped>
 @import "~/scss/main.scss";
 
 .container {
-    text-align: center;
-    .photo {
-        width: 300px;
-        margin: 70px auto 20px;
-        padding: 30px;
-        border: 10px solid $gray-300;
-        border-radius: 50%;
-        box-sizing: border-box;
-        background-color: $gray-200;
-        img {
-            width: 100%;
+    height: 70vh;
+    position: relative;
+    background-image: url("https://github.com/jeunseon/Doit-vue/assets/111102131/9287807d-6606-4de3-8b11-fb58839377ea");
+    background-repeat: no-repeat;
+    background-size: cover;
+    .intro {
+        top: 40%;
+        right: 0%;
+        p {
+            font-size: 40px;
+            text-align: center;
+            color: $white;
+            span {
+                color: $primary;
+                font-weight: 700;
+                font-size: 80px;
+                letter-spacing: 5px;
+            }
         }
     }
-    .name {
-        font-weight: 700;
-        font-size: 40px;
-        margin-bottom: 20px;
+}
+@keyframes circle {
+    0% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
     }
-    .gotoGit {
-        width: 60px;
+    50% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        background-color: rgba(253, 192, 0, .1);
+    }
+    100% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
     }
 }
+@keyframes circle2 {
+    0% {
+        border-radius: 52% 68% 80% 40% / 55% 55% 65% 65%;
+    }
+    50% {
+        border-radius: 50% 50% 40% 60% / 70% 40% 80% 50%;
+        background-color: rgba(255, 206, 47, 0.1);
+    }
+    100% {
+        border-radius: 52% 68% 80% 40% / 55% 55% 65% 65%;
+    }
+}
+@keyframes circle3 {
+    0% {
+        border-radius: 30% 54% 70% 65% / 45% 75% 60% 42%;
+    }
+    50% {
+        border-radius: 64% 57% 49% 53% / 48% 55% 61% 46%;
+        background-color: rgba(246, 255, 71, 0.2);
+    }
+    100% {
+        border-radius: 30% 54% 70% 65% / 45% 75% 60% 42%;
+    }
+}
+
 </style>

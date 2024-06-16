@@ -114,12 +114,6 @@ export default {
                 
             }
         }
-        &.banner {
-            .imgWrap {
-                
-
-            }
-        }
         &.intro {
             .imgWrap {
                 height: 500px;
