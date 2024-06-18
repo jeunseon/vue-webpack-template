@@ -13,6 +13,15 @@
             <swiper-slide><p>WELCOME TO MY <br /><span>PORTFOLIO</span> : )</p></swiper-slide>
             <swiper-slide><p>I AM JEONG<br /><span>EUNSEON</span></p></swiper-slide>
         </swiper>
+        <div class="shape">
+            <img 
+                @click="$router.push('/profile')" 
+                class="helloimg" 
+                src="~/assets/imgLogo.png" 
+                alt="이미지로고">
+            <img class="hello" src="~/assets/hello.png" alt="hello 말풍선">
+        </div>
+       
     </div>
 </template>
 
@@ -29,18 +38,18 @@ export default {
       SwiperSlide,
     },
     setup() {
-      const onSwiper = (swiper) => {
-        console.log(swiper);
-      };
-      const onSlideChange = () => {
-        console.log('slide change');
-      };
-      return {
-        onSwiper,
-        onSlideChange,
-        modules: [Autoplay, EffectFade],
-      };
-    },
+        const onSwiper = (swiper) => {
+            console.log(swiper);
+         };
+        const onSlideChange = () => {
+            console.log('slide change');
+        };
+         return {
+            onSwiper,
+            onSlideChange,
+            modules: [Autoplay, EffectFade],
+        };
+    }
 };
 </script>
 
@@ -67,6 +76,49 @@ export default {
                 letter-spacing: 5px;
             }
         }
+    }
+    div {
+        transition: 1s;
+        img {
+            position: absolute;
+            &.helloimg {
+                width: 200px;
+                top: 90px;
+                right: 40px;
+                transform: rotate(23deg);
+                animation: imgrot 3s linear infinite;
+                cursor: pointer;
+            }
+            &.hello {
+                width: 100px;
+                top: 40px;
+                right: 230px;
+                transform: rotate(-15deg);
+                animation: updown 1s linear infinite;
+            }
+        }
+    }
+}
+@keyframes imgrot {
+    0% {
+        transform: rotate(23deg);
+    }
+    50% {
+        transform: rotate(-23deg);
+    }
+    100% {
+        transform: rotate(23deg);
+    }
+}
+@keyframes updown {
+    0% {
+        top: 40px;
+    }
+    50% {
+        top: 30px;
+    }
+    100% {
+        top: 40px;
     }
 }
 @keyframes circle {
@@ -105,5 +157,4 @@ export default {
         border-radius: 30% 54% 70% 65% / 45% 75% 60% 42%;
     }
 }
-
 </style>

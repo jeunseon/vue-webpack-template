@@ -39,6 +39,7 @@ footer {
         }
         a {
             text-decoration: none;
+            color: $gray-600;
         }
     }
 }

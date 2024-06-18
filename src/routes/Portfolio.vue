@@ -73,11 +73,11 @@ export default {
                     tool: 'HTML / CSS / JS'
                 },
                 {
-                    poster: '',
+                    poster: require('~/assets/vueport.jpg').default,
                     title:'Vue 포트폴리오',
                     git: 'https://github.com/jeunseon/vue-webpack-template',
-                    view: '',
-                    monitor: 'Laptop / Tablet / Mobile',
+                    view: 'https://jeunseon.github.io/vue-webpack-template',
+                    monitor: 'Laptop',
                     page: '메인 / 서브페이지', 
                     tool: 'HTML / SCSS / Bootstrap / VUE'
                 },
